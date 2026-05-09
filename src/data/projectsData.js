@@ -1,11 +1,22 @@
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
+import o2 from "../assets/o2.png";
+import p12 from "../assets/p1.2.png";
+import p13 from "../assets/p13.png";
+import p14 from "../assets/p14.png";
+import p21 from "../assets/p21.png";
+import p22 from "../assets/p22.png";
+import p23 from "../assets/p23.png";
+import p24 from "../assets/p24.png";
+import p25 from "../assets/p25.png";
 
 export const projectsData = [
   {
     id: "the-daily",
-    title: "The Daily: Digital Insight",
-    stack: ["Laravel 13", "React", "TypeScript", "Tailwind"],
+    title: "The Daily",
+    stack: ["Laravel 13", "React","internal",
+      "sqlite"],
+
     image: project1,
     desc: "A high-end news and analytics platform featuring real-time data visualization, bilingual support, and a premium neural aesthetic.",
     features: [
@@ -25,9 +36,9 @@ export const projectsData = [
         solution: "Utilized React with TypeScript for type-safe components and optimized rendering."
       }
     ],
-    github: "https://github.com/Shaker-Al-Muzaini/the-daily",
-    live: "https://thedaily.example.com",
-    gallery: [project1, project2, project1]
+    github: "https://github.com/Shaker-Al-Muzaini/The-Daily",
+    live: "https://the-daily--sshakiralmazini.replit.app",
+    gallery: [project1,p14,p12,p13]
   },
   {
     id: "personal-memory-os",
@@ -52,16 +63,16 @@ export const projectsData = [
         solution: "Built the application using Nuxt.js for server-side rendering and quick load times."
       }
     ],
-    github: "https://github.com/Shaker-Al-Muzaini/personal-memory-os",
-    live: "https://memoryos.example.com",
-    gallery: [project2, project1, project2]
+    github: "https://github.com/Shaker-Al-Muzaini/Building-Personal-Memory-OS",
+    live: "https://building-personal-memory-os-production.up.railway.app",
+    gallery: [project2,p21,p22,p23,p24,p25]
   },
   {
     id: "doshtu-multi-vendor",
-    title: "Doshtu Multi-Vendor",
+    title: "Elia Al-Taybeh",
     stack: ["Laravel", "MySQL", "Docker", "AWS"],
-    image: project1,
-    desc: "A robust multi-vendor e-commerce ecosystem with modular architecture, AliExpress integration, and advanced admin controls.",
+    image: o2,
+    desc: "Establishment of a special dashboard in Elia Al-TaybehTransport and Tourism Company",
     features: [
       "Multi-vendor storefronts and dashboards",
       "AliExpress product sync API integration",
