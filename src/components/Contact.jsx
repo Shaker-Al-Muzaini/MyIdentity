@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, CodeXml, ExternalLink, Globe, ArrowRight } from "lucide-react";
+import { Mail, CodeXml, ExternalLink, Globe, ArrowRight, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -36,6 +36,16 @@ const Contact = () => {
                   <p className="text-white font-medium">sshakiralmazini@gmail.com</p>
                 </div>
               </div>
+
+              <a href="https://wa.me/972567379813" target="_blank" rel="noreferrer" className="flex items-center gap-4 group cursor-pointer block">
+                <div className="w-12 h-12 glass rounded-full flex items-center justify-center text-emerald-accent group-hover:bg-emerald-accent group-hover:text-white transition-all border border-emerald-accent/20">
+                  <MessageCircle size={20} />
+                </div>
+                <div>
+                  <p className="text-gray-500 text-xs uppercase tracking-widest">WhatsApp</p>
+                  <p className="text-white font-medium">+972 56-737-9813</p>
+                </div>
+              </a>
 
               <div className="flex gap-4 pt-4">
                 {[
