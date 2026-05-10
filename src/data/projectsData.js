@@ -77,6 +77,31 @@ export const projectsData = [
     gallery: [project2,p21,p22,p23,p24,p25]
   },
   {
+    id: "IMP",
+    title: "Interactive Medical Education Platform",
+    stack: ["Laravel10","Metronic","Mysql","Web API","pusher"],
+    image: p6,
+    desc: "Create a website for communication talks between villa employees",
+    features: [
+      "The Interactive Medical Education Platform platform is an Arab platform concerned with the medical field in general",
+      "including videos, paid and free services, forums",
+      "and many services provided by other educational platforms in this field",
+    ],
+    tasksAndSolutions: [
+      {
+        task: "Building a seamless SPA experience with Laravel",
+        solution: "Adopted Inertia.js to tightly couple Laravel routing with React frontend without building a separate API."
+      },
+      {
+        task: "Real-time chat and notifications",
+        solution: "Implemented Pusher for instant messaging and system alerts during live sessions."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/Competition-Project",
+    live: "#",
+    gallery: [p6, p61,p62,p63]
+  },
+  {
     id: "Elia",
     title: "Elia Al-Taybeh",
     stack: ["Laravel8", "MySQL", "Docker", "vue3","Metronic"],
@@ -159,28 +184,30 @@ export const projectsData = [
     gallery: [p51, p5]
   },
   {
-    id: "IMP",
-    title: "Interactive Medical Education Platform",
-    stack: ["Laravel10","Metronic","Mysql","Web API","pusher"],
-    image: p6,
-    desc: "Create a website for communication talks between villa employees",
+    id: "Elia",
+    title: "Elia Al-Taybeh",
+    stack: ["Laravel8", "MySQL", "Docker", "vue3","Metronic"],
+    image: o2,
+    desc: "Establishment of a special dashboard in Elia Al-TaybehTransport and Tourism Company",
     features: [
-      "The Interactive Medical Education Platform platform is an Arab platform concerned with the medical field in general",
-      "including videos, paid and free services, forums",
-      "and many services provided by other educational platforms in this field",
+      "Multi-vendor storefronts and dashboards",
+      "AliExpress product sync API integration",
+      "Modular system architecture for easy scaling",
+      "Comprehensive admin control panel",
+      "Automated order fulfillment workflow"
     ],
     tasksAndSolutions: [
       {
-        task: "Building a seamless SPA experience with Laravel",
-        solution: "Adopted Inertia.js to tightly couple Laravel routing with React frontend without building a separate API."
+        task: "Managing product data from external APIs",
+        solution: "Developed robust queue jobs in Laravel to sync and process AliExpress data asynchronously."
       },
       {
-        task: "Real-time chat and notifications",
-        solution: "Implemented Pusher for instant messaging and system alerts during live sessions."
+        task: "Ensuring high availability and scalability",
+        solution: "Containerized the application with Docker and deployed on AWS with load balancing."
       }
     ],
-    github: "https://github.com/Shaker-Al-Muzaini/Competition-Project",
+    github: "https://github.com/Shaker-Al-Muzaini/Taiba-main",
     live: "#",
-    gallery: [p6, p61,p62,p63]
+    gallery: [o2]
   },
 ];
