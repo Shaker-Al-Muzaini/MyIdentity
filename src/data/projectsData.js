@@ -183,31 +183,4 @@ export const projectsData = [
     live: "#",
     gallery: [p51, p5]
   },
-  {
-    id: "Elia",
-    title: "Elia Al-Taybeh",
-    stack: ["Laravel8", "MySQL", "Docker", "vue3","Metronic"],
-    image: o2,
-    desc: "Establishment of a special dashboard in Elia Al-TaybehTransport and Tourism Company",
-    features: [
-      "Multi-vendor storefronts and dashboards",
-      "AliExpress product sync API integration",
-      "Modular system architecture for easy scaling",
-      "Comprehensive admin control panel",
-      "Automated order fulfillment workflow"
-    ],
-    tasksAndSolutions: [
-      {
-        task: "Managing product data from external APIs",
-        solution: "Developed robust queue jobs in Laravel to sync and process AliExpress data asynchronously."
-      },
-      {
-        task: "Ensuring high availability and scalability",
-        solution: "Containerized the application with Docker and deployed on AWS with load balancing."
-      }
-    ],
-    github: "https://github.com/Shaker-Al-Muzaini/Taiba-main",
-    live: "#",
-    gallery: [o2]
-  },
 ];
