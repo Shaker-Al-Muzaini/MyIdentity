@@ -8,14 +8,29 @@ const certifications = [
     link: "https://tinyurl.com/3cfekkdb",
   },
   {
+    name: "Professional Certificate in DevOps",
+    date: "01/2026",
+    link: "https://drive.google.com/file/d/1VWa6GkZT01mBSHeQd9sOgNwvcF2If4iE/view",
+  },
+  {
     name: "English Writing Skills",
     date: "03/2021",
     link: "https://tinyurl.com/y8rfmspe",
   },
   {
+    name: "Docker Deep Dive",
+    date: "01/2026",
+    link: "https://drive.google.com/file/d/1qTxHkYK7f5oB5V9UwSDmA5sXQvO78jcR/view",
+  },
+  {
     name: "Laravel Socialite",
     date: "05/2020",
     link: "https://tinyurl.com/3fjev5a2",
+  },
+  {
+    name: "Hotel Management System",
+    date: "02/2026",
+    link: "https://drive.google.com/file/d/1MsSVAzQQh65ucOb3EXvC06cWZZlMIpo-/view",
   },
   {
     name: "Complete Job Portal Build",
@@ -61,7 +76,7 @@ const Certifications = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm group-hover:text-violet-glow transition-colors">{cert.name}</h4>
-                  <p className="text-gray-500 text-xs">{cert.date}</p>
+                  <p className="text-violet-deep">{cert.date}</p>
                 </div>
               </div>
               <ExternalLink size={16} className="text-gray-600 group-hover:text-white transition-colors" />

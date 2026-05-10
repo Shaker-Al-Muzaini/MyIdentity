@@ -9,13 +9,22 @@ import p22 from "../assets/p22.png";
 import p23 from "../assets/p23.png";
 import p24 from "../assets/p24.png";
 import p25 from "../assets/p25.png";
+import p4 from "../assets/p4.png";
+import p41 from "../assets/p41.png";
+import p42 from "../assets/p42.png";
+import p5 from "../assets/p5.png";
+import p51 from "../assets/p51.png";
+import p6 from "../assets/p6.png";
+import p61 from "../assets/p61.png";
+import p62 from "../assets/p62.png";
+import p63 from "../assets/p63.png";
 
 export const projectsData = [
   {
     id: "the-daily",
     title: "The Daily",
     stack: ["Laravel 13", "React","internal",
-      "sqlite"],
+      "sqlite3"],
 
     image: project1,
     desc: "A high-end news and analytics platform featuring real-time data visualization, bilingual support, and a premium neural aesthetic.",
@@ -43,7 +52,7 @@ export const projectsData = [
   {
     id: "personal-memory-os",
     title: "Personal Memory OS",
-    stack: ["Laravel", "Vue.js", "Nuxt", "Three.js"],
+    stack: ["Laravel13", "Vue.js", "Nuxt", "Three.js","groqcloud","laravel-vue-i18n","architecture-srv","groq AI"],
     image: project2,
     desc: "An AI-powered 'Second Brain' for knowledge management, featuring immersive 3D visualizations and seamless data sync.",
     features: [
@@ -68,9 +77,9 @@ export const projectsData = [
     gallery: [project2,p21,p22,p23,p24,p25]
   },
   {
-    id: "doshtu-multi-vendor",
+    id: "Elia",
     title: "Elia Al-Taybeh",
-    stack: ["Laravel", "MySQL", "Docker", "AWS"],
+    stack: ["Laravel8", "MySQL", "Docker", "vue3","Metronic"],
     image: o2,
     desc: "Establishment of a special dashboard in Elia Al-TaybehTransport and Tourism Company",
     features: [
@@ -90,16 +99,18 @@ export const projectsData = [
         solution: "Containerized the application with Docker and deployed on AWS with load balancing."
       }
     ],
-    github: "https://github.com/Shaker-Al-Muzaini/doshtu",
-    live: "https://doshtu.example.com",
-    gallery: [project1, project2, project1]
+    github: "https://github.com/Shaker-Al-Muzaini/Taiba-main",
+    live: "#",
+    gallery: [o2]
   },
   {
-    id: "edura-learning-hub",
+    id: "Edura education",
     title: "EduRa Learning Hub",
-    stack: ["Laravel", "Inertia.js", "Pusher", "PostgreSQL"],
-    image: project2,
-    desc: "A comprehensive online education platform with real-time interactivity, student progress analytics, and custom dashboards.",
+    stack: ["Laravel10", "vue3", "pinia-vuejs","Metronic", "Mysql","Bootstrap5","Formwizard"],
+    image: p4,
+    desc: "A platform for distance learning.\n" +
+        "A lot of technologies were used inside it.\n" +
+        "This platform was created entirely using laravel with Vuejs.",
     features: [
       "Live interactive classrooms using WebRTC/Pusher",
       "Detailed student progress tracking and analytics",
@@ -117,8 +128,59 @@ export const projectsData = [
         solution: "Implemented Pusher for instant messaging and system alerts during live sessions."
       }
     ],
-    github: "https://github.com/Shaker-Al-Muzaini/edura",
-    live: "https://edura.example.com",
-    gallery: [project2, project1, project2]
+    github: "https://github.com/Shaker-Al-Muzaini/Academic-Educational-Platform",
+    live: "#",
+    gallery: [p4, p41, p42]
+  },
+  {
+    id: "villa_employees",
+    title: "villa employees",
+    stack: ["Laravel10","Metronic", "WebRTC","Mysql","JITSI_Meet","Redis DB","Docker","pusher"],
+    image: p5,
+    desc: "Create a website for communication talks between villa employees",
+    features: [
+      "Detailed student progress tracking and analytics",
+      "Customizable instructor and student dashboards",
+      "Live interactive classrooms using WebRTC/Pusher",
+      "Secure payment gateway integration",
+    ],
+    tasksAndSolutions: [
+      {
+        task: "Building a seamless SPA experience with Laravel",
+        solution: "Adopted Inertia.js to tightly couple Laravel routing with React frontend without building a separate API."
+      },
+      {
+        task: "Real-time chat and notifications",
+        solution: "Implemented Pusher for instant messaging and system alerts during live sessions."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/Messenger-App-WithFlutter",
+    live: "#",
+    gallery: [p51, p5]
+  },
+  {
+    id: "IMP",
+    title: "Interactive Medical Education Platform",
+    stack: ["Laravel10","Metronic","Mysql","Web API","pusher"],
+    image: p6,
+    desc: "Create a website for communication talks between villa employees",
+    features: [
+      "The Interactive Medical Education Platform platform is an Arab platform concerned with the medical field in general",
+      "including videos, paid and free services, forums",
+      "and many services provided by other educational platforms in this field",
+    ],
+    tasksAndSolutions: [
+      {
+        task: "Building a seamless SPA experience with Laravel",
+        solution: "Adopted Inertia.js to tightly couple Laravel routing with React frontend without building a separate API."
+      },
+      {
+        task: "Real-time chat and notifications",
+        solution: "Implemented Pusher for instant messaging and system alerts during live sessions."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/Competition-Project",
+    live: "#",
+    gallery: [p6, p61,p62,p63]
   },
 ];

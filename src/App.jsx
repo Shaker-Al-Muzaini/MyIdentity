@@ -35,9 +35,6 @@ const Home = () => (
     </section>
 
     <Certifications />
-
-    <Testimonials />
-    
     <Contact />
   </>
 );
