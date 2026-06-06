@@ -1,6 +1,7 @@
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import o2 from "../assets/o2.png";
+import o21 from "../assets/o21.png";
 import p12 from "../assets/p1.2.png";
 import p13 from "../assets/p13.png";
 import p14 from "../assets/p14.png";
@@ -126,7 +127,7 @@ export const projectsData = [
     ],
     github: "https://github.com/Shaker-Al-Muzaini/Taiba-main",
     live: "#",
-    gallery: [o2]
+    gallery: [o2,o21]
   },
   {
     id: "Edura education",
