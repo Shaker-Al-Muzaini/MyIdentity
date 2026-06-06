@@ -18,7 +18,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-violet-glow font-medium tracking-widest uppercase text-sm mb-2">
-            Senior Laravel Developer & DevOps Engineer
+           Laravel Developer | Backend Architect & DevOps Practitioner
           </h2>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white leading-[0.9]">
             SHAKER <br />
@@ -32,8 +32,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Architecting high-performance digital systems with 5+ years of experience 
-          in Laravel, React, and DevOps. Focused on scalability, security, and neural-inspired interfaces.
+          Laravel Developer & DevOps Practitioner with 5+ years building high-traffic backend systems and
+multi-vendor platforms. Delivered production systems handling 8k+ daily transactions with 99%+
+uptime. Deep expertise in RESTful API design, third-party integrations, and real-time applications
+using WebSocket and Pusher. Hands-on DevOps experience with Docker, GitHub Actions CI/CD, and AWS — from local dev to live deployment
         </motion.p>
 
         <motion.div

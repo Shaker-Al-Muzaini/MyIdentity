@@ -5,7 +5,8 @@ const experiences = [
     year: "2023 - 2025",
     role: "Senior Laravel Developer",
     company: "In2world (MIXAA Group)",
-    desc: "Led the development of Doshtu multi-vendor platform, integrated AliExpress APIs, and built complex admin dashboards using Metronic. Optimized deployments with Docker and CI/CD pipelines.",
+    desc: 
+    "Architected and led backend development of Doshtu, a multi- vendor e-commerce platform supporting 50+ vendors and processing 7k daily transactions with optimized query response times under 170ms. ",
   },
   {
     year: "2021 - 2023",
