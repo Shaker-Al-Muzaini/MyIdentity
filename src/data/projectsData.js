@@ -88,9 +88,8 @@ export const projectsData = [
     title: "Programming and development of an AI-integrated SaaS platform.",
     stack: ["Laravel13", "React.js", "Nuxt", "Three.js","DDD","laravel-vue-i18n","architecture-srv","groq AI"],
     image: h1,
-    desc: "Ready AI-powered PDF summarization SaaS platform. Engineered with clean DDD architecture and a modern SPA interface to launch subscriptions instantly.\n" +
-        "\n" +
-        "The platform is architected using professional Domain-Driven Design (DDD) principles to ensure clean, future-proof code, and features a modern, seamless user interface (Single Page Application).",
+    desc: "Ready AI-powered PDF summarization SaaS platform. Engineered with clean DDD architecture and a modern SPA interface to launch subscriptions instantly.\n",
+
     features: [
 
       "🤖 Smart, Multi-Option Summarization: Allows users to summarize files in various formats (default summary, key points, highlights, or detailed summary).\n" ,
