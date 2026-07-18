@@ -19,6 +19,12 @@ import p6 from "../assets/p6.png";
 import p61 from "../assets/p61.png";
 import p62 from "../assets/p62.png";
 import p63 from "../assets/p63.png";
+import h1 from "../assets/h1.png";
+import h11 from "../assets/h11.png";
+import h2 from "../assets/h2.png";
+import h3 from "../assets/h3.png";
+import h4 from "../assets/h4.png";
+
 
 export const projectsData = [
   {
@@ -76,6 +82,38 @@ export const projectsData = [
     github: "https://github.com/Shaker-Al-Muzaini/Building-Personal-Memory-OS",
     live: "https://building-personal-memory-os-production.up.railway.app",
     gallery: [project2,p21,p22,p23,p24,p25]
+  },
+  {
+    id: "Programming and development of an AI-integrated SaaS platform.",
+    title: "Programming and development of an AI-integrated SaaS platform.",
+    stack: ["Laravel13", "React.js", "Nuxt", "Three.js","DDD","laravel-vue-i18n","architecture-srv","groq AI"],
+    image: h1,
+    desc: "Are you looking to launch your own AI-powered SaaS venture and generate revenue through subscriptions? I offer a comprehensive, ready-to-use platform for AI-based PDF summarization, built with cutting-edge technologies to ensure speed, security, and scalability.\n" +
+        "\n" +
+        "The platform is architected using professional Domain-Driven Design (DDD) principles to ensure clean, future-proof code, and features a modern, seamless user interface (Single Page Application).",
+    features: [
+
+      "🤖 Smart, Multi-Option Summarization: Allows users to summarize files in various formats (default summary, key points, highlights, or detailed summary).\n" +
+      "💳 Integrated Subscription System (Stripe): A payment system connected to Stripe for processing monthly/annual subscriptions, featuring a webhook system to automatically update user plans upon payment.\n" +
+      "👥 Multi-Role System:\n" +
+      "User Dashboard: For tracking usage, uploading files, and exporting summaries.\n" +
+      "Admin Dashboard: For managing users and plans, and monitoring revenue and statistics.\n" +
+      "🛡️ Advanced Security System (Fortify): Secure login supporting Two-Factor Authentication (2FA) and smart passkeys.\n" +
+      "📜 Usage and Export History: Ability to access previously summarized files and export summaries as text (TXT) or PDF files with a single click."
+    ],
+    tasksAndSolutions: [
+      {
+        task: "Visualizing complex data relationships",
+        solution: "Integrated Three.js to render a responsive 3D node network."
+      },
+      {
+        task: "Fast and SEO friendly frontend",
+        solution: "Built the application using Nuxt.js for server-side rendering and quick load times."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/SaaS_PDF",
+    live: "https://github.com/Shaker-Al-Muzaini/SaaS_PDF",
+    gallery: [h11,h2,h3,h4]
   },
   {
     id: "IMP",
