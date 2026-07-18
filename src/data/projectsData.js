@@ -93,12 +93,12 @@ export const projectsData = [
         "The platform is architected using professional Domain-Driven Design (DDD) principles to ensure clean, future-proof code, and features a modern, seamless user interface (Single Page Application).",
     features: [
 
-      "🤖 Smart, Multi-Option Summarization: Allows users to summarize files in various formats (default summary, key points, highlights, or detailed summary).\n" +
-      "💳 Integrated Subscription System (Stripe): A payment system connected to Stripe for processing monthly/annual subscriptions, featuring a webhook system to automatically update user plans upon payment.\n" +
-      "👥 Multi-Role System:\n" +
-      "User Dashboard: For tracking usage, uploading files, and exporting summaries.\n" +
-      "Admin Dashboard: For managing users and plans, and monitoring revenue and statistics.\n" +
-      "🛡️ Advanced Security System (Fortify): Secure login supporting Two-Factor Authentication (2FA) and smart passkeys.\n" +
+      "🤖 Smart, Multi-Option Summarization: Allows users to summarize files in various formats (default summary, key points, highlights, or detailed summary).\n" ,
+      "💳 Integrated Subscription System (Stripe): A payment system connected to Stripe for processing monthly/annual subscriptions, featuring a webhook system to automatically update user plans upon payment.\n",
+      "👥 Multi-Role System:\n" ,
+      "User Dashboard: For tracking usage, uploading files, and exporting summaries.\n" ,
+      "Admin Dashboard: For managing users and plans, and monitoring revenue and statistics.\n" ,
+      "🛡️ Advanced Security System (Fortify): Secure login supporting Two-Factor Authentication (2FA) and smart passkeys.\n" ,
       "📜 Usage and Export History: Ability to access previously summarized files and export summaries as text (TXT) or PDF files with a single click."
     ],
     tasksAndSolutions: [
