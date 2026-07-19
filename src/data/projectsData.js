@@ -24,6 +24,10 @@ import h11 from "../assets/h11.png";
 import h2 from "../assets/h2.png";
 import h3 from "../assets/h3.png";
 import h4 from "../assets/h4.png";
+import b11 from "../assets/11.png";
+import b12 from "../assets/12.png";
+import b13 from "../assets/13.png";
+import b14 from "../assets/14.png";
 
 
 export const projectsData = [
@@ -113,6 +117,38 @@ export const projectsData = [
     github: "https://github.com/Shaker-Al-Muzaini/SaaS_PDF",
     live: "https://github.com/Shaker-Al-Muzaini/SaaS_PDF",
     gallery: [h11,h2,h3,h4]
+  },
+  {
+    id: "B2B Link",
+    title: "B2B Link",
+    stack: ["Laravel 13", "Vue.js","internal",
+      "SQLite","Tailwind CSS","Laravel Wayfinder","Laravel Fortify","Spatie Laravel Permission"],
+
+    image:b13,
+    desc: "An integrated B2B contracting platform connecting companies with technical service providers—built using Laravel 13 and Vue 3 (Inertia.js)—to support competitive bidding," +
+        " proposals, and the digital signing of NDAs and contracts.",
+    features: [
+      "💼 Multi-role System",
+      "📋 RFQs & Proposals",
+      "🛡️ Digital NDA & Contracts",
+      "📂 Verification Process",
+      "🔒 Auth & Passkeys",
+      "📂 Verification Process",
+      "⚡ Vite + Inertia.js"
+    ],
+    tasksAndSolutions: [
+      {
+        task: "⚡ Vite + Inertia.js",
+        solution: "Experience a lightning-fast Single Page Application (SPA) while maintaining the security and power of Laravel.."
+      },
+      {
+        task: "💼 Multi-role System",
+        solution: "A dedicated system for each role with full-featured capabilities: a Buyer dashboard and a Supplier dashboard."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/B2B_App",
+    live: "https://github.com/Shaker-Al-Muzaini/B2B_App",
+    gallery: [b11,b12,b13,b14]
   },
   {
     id: "IMP",
