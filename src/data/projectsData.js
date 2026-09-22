@@ -28,8 +28,8 @@ import b11 from "../assets/11.png";
 import b12 from "../assets/12.png";
 import b13 from "../assets/13.png";
 import b14 from "../assets/14.png";
-import b15 from "../assets/15.png";
-import b16 from "../assets/16.png";
+import b15 from "../assets/b15.png";
+import b16 from "../assets/b16.png";
 
 
 export const projectsData = [
@@ -63,7 +63,7 @@ export const projectsData = [
     gallery: [project1,p14,p12,p13]
   },
   {
-    id: "doblg ",
+    id: "doblg",
     title: "doblg",
     stack: ["python", "React","fastAPi",
       "sqlite3"],
