@@ -63,8 +63,8 @@ export const projectsData = [
     gallery: [project1,p14,p12,p13]
   },
   {
-    id: "the-daily",
-    title: "The Daily",
+    id: "doblg ",
+    title: "doblg",
     stack: ["python", "React","fastAPi",
       "sqlite3"],
 
