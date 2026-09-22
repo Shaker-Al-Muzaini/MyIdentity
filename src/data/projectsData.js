@@ -28,6 +28,8 @@ import b11 from "../assets/11.png";
 import b12 from "../assets/12.png";
 import b13 from "../assets/13.png";
 import b14 from "../assets/14.png";
+import b15 from "../assets/15.png";
+import b16 from "../assets/16.png";
 
 
 export const projectsData = [
@@ -59,6 +61,35 @@ export const projectsData = [
     github: "https://github.com/Shaker-Al-Muzaini/The-Daily",
     live: "https://the-daily--sshakiralmazini.replit.app",
     gallery: [project1,p14,p12,p13]
+  },
+  {
+    id: "the-daily",
+    title: "The Daily",
+    stack: ["python", "React","fastAPi",
+      "sqlite3"],
+
+    image: b15,
+    desc: "An AI platform for dubbing and translating YouTube videos into Arabic.",
+    features: [
+      "Direct YouTube video extraction via link with quality selection•",
+      "Automatic audio transcription (Speech-to-Text) of the original audio•",
+      "Automated translation with a manual review interface prior to final dubbing•",
+      "Text-to-Speech (TTS) engine supporting multiple dialects and voice styles (male/female, formal/youthful/advertising, etc.)•",
+      "Full control over pitch and speech rate•"
+    ],
+    tasksAndSolutions: [
+      {
+        task: "Handling high Designingdata",
+        solution: "Designing a system that offers features rivaling paid tools like ElevenLabs or HeyGen."
+      },
+      {
+        task: "Complex UI rendering and state management",
+        solution: "Utilized React with TypeScript for type-safe components and optimized rendering."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/df",
+    live: "",
+    gallery: [b16,b15]
   },
   {
     id: "personal-memory-os",
