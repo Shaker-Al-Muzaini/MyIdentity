@@ -30,9 +30,41 @@ import b13 from "../assets/13.png";
 import b14 from "../assets/14.png";
 import b15 from "../assets/b15.png";
 import b16 from "../assets/b16.png";
+import b17 from "../assets/b17.png";
+import b18 from "../assets/b18.png";
 
 
 export const projectsData = [
+
+  {
+    id: "HR-Tech",
+    title: "HR-Tech",
+    stack: ["Laravel 13", "FastApi","n8n",
+      "postgresql","Redis","Vue3"],
+
+    image: b17,
+    desc: "Smart HR Tech System is an intelligent recruitment and assessment platform that ",
+    features: [
+      "🎥 Two-way video calling (WebRTC P2P)",
+      "🧠 Real-time intelligent analysis (Presentations + FACS + YOLO)",
+     "📊 Summary reports with objective scoring",
+      "🤖 n8n integration for scheduling follow-up interviews",
+    ],
+    tasksAndSolutions: [
+      {
+        task: "🛡️ HOW I HANDLED TRUST 🔹 Quality Gate:",
+        solution: "when signal quality is weak, the analysis isn't used,🔹 AI engine built with FastAPI, separate from Laravel,🔹 Observer Pattern for consistent, auditable data"
+      },
+      {
+        task: "Complex UI rendering and state management",
+        solution: "Utilized React with TypeScript for type-safe components and optimized rendering."
+      }
+    ],
+    github: "https://github.com/Shaker-Al-Muzaini/HR-Tech",
+    live: "https://github.com/Shaker-Al-Muzaini/HR-Tech",
+    gallery: [b17,b18]
+  },
+
   {
     id: "the-daily",
     title: "The Daily",
