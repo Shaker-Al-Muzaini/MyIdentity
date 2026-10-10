@@ -116,7 +116,7 @@ export const projectsData = [
   live: "YOUR_LIVE_URL",
 
   gallery: [b19]
-}
+},
 
   {
     id: "the-daily",
