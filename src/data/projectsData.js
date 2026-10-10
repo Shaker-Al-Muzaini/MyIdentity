@@ -32,6 +32,7 @@ import b15 from "../assets/b15.png";
 import b16 from "../assets/b16.png";
 import b17 from "../assets/b17.png";
 import b18 from "../assets/b18.png";
+import b19 from "../assets/b19.png";
 
 
 export const projectsData = [
@@ -64,6 +65,58 @@ export const projectsData = [
     live: "https://github.com/Shaker-Al-Muzaini/HR-Tech",
     gallery: [b17,b18]
   },
+  {
+  id: "AI-Content-Automation",
+  title: "AI Content Automation",
+  stack: [
+    "n8n",
+    "GPT-5",
+    "Tavily",
+    "WordPress",
+    "Telegram",
+    "Google Sheets",
+    "Google Drive"
+  ],
+
+  image: b19,
+
+  desc: "An AI-powered content automation workflow built with n8n that automates the content creation pipeline from idea and research to writing, image generation, human review, publishing, and archiving.",
+
+  features: [
+    "🔍 Automated research using Tavily with up-to-date web information",
+    "✍️ AI-powered article generation based on research results",
+    "🖼️ AI-generated featured images based on article content",
+    "👤 Human-in-the-loop approval through Telegram",
+    "📢 Multi-platform publishing to WordPress, LinkedIn, X, and Facebook",
+    "📁 Automatic content archiving with Google Drive and Google Sheets",
+    "🔄 Flexible AI model integration with GPT, Claude, or Gemini"
+  ],
+
+  tasksAndSolutions: [
+    {
+      task: "🔍 Keeping AI-generated content based on current information",
+      solution: "Integrated Tavily into the workflow to retrieve up-to-date web information before the AI agent generates the article."
+    },
+    {
+      task: "👤 Maintaining human control over AI-generated content",
+      solution: "Added a Telegram approval step so no article is published until it has been reviewed and explicitly approved."
+    },
+    {
+      task: "🔄 Avoiding dependency on a single AI provider",
+      solution: "Designed the workflow with a flexible AI layer that allows GPT, Claude, or Gemini to be switched without rebuilding the entire automation."
+    },
+    {
+      task: "📢 Publishing the same content across multiple platforms",
+      solution: "Connected WordPress, LinkedIn, X, and Facebook to distribute approved content automatically from a single workflow."
+    }
+  ],
+
+  github: "https://github.com/Shaker-Al-Muzaini/AI-Content-Automation",
+
+  live: "YOUR_LIVE_URL",
+
+  gallery: [b19]
+}
 
   {
     id: "the-daily",
