@@ -2,13 +2,13 @@ import { Link, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-import Capabilities from "./components/Capabilities";
+import Capabilities from "./components/Capabilities.jsx";
 import Experience from "./components/Experience";
-import Toolbox from "./components/Toolbox";
+import Toolbox from "./components/Toolbox.jsx";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollManager from "./components/ScrollManager";
+import ScrollManager from "./components/ScrollManager.jsx";
 import ProjectDetails from "./components/ProjectDetails";
 
 const Home = () => (
