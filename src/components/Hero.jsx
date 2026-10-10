@@ -1,96 +1,73 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import profileImg from "../assets/shaker_profile.png";
+import { Link } from "react-router-dom";
+import profileImg from "../assets/shaker_avatar.png";
+import { profile } from "../data/site";
+import RequestTrace from "./RequestTrace";
 
-const Hero = () => {
-  const [showFilter, setShowFilter] = useState(false);
+const accent = (text) =>
+  text.split(/(AI service|automation)/).map((part, i) =>
+    part === "AI service" ? (
+      <span key={i} className="text-mint">{part}</span>
+    ) : part === "automation" ? (
+      <span key={i} className="text-gold">{part}</span>
+    ) : (
+      part
+    )
+  );
 
-  return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 overflow-hidden pt-20">
-      {/* Background Glow */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-violet-deep/20 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-emerald-accent/10 rounded-full blur-[120px] -z-10" />
-
-      <div className="flex-1 text-left space-y-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-violet-glow font-medium tracking-widest uppercase text-sm mb-2">
-           Laravel Developer | Backend Architect & DevOps Practitioner
-          </h2>
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white leading-[0.9]">
-            SHAKER <br />
-            <span className="text-violet-deep">AL-MUZAYNI.</span>
-          </h1>
-        </motion.div>
-
-        <motion.p
-          className="text-gray-400 max-w-md text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Laravel Developer & DevOps Practitioner with 5+ years building high-traffic backend systems and
-multi-vendor platforms. Delivered production systems handling 8k+ daily transactions with 99%+
-uptime. Deep expertise in RESTful API design, third-party integrations, and real-time applications
-using WebSocket and Pusher. Hands-on DevOps experience with Docker, GitHub Actions CI/CD, and AWS — from local dev to live deployment
-        </motion.p>
-
-        <motion.div
-          className="flex gap-4 pt-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <button className="px-8 py-3 bg-violet-deep text-white font-medium rounded-full hover:bg-violet-glow transition-all duration-300 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-105 active:scale-95">
-            View Projects
-          </button>
-          <button className="px-8 py-3 glass text-white font-medium rounded-full hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95">
-            Download CV
-          </button>
-        </motion.div>
+const Hero = () => (
+  <section id="home" className="wrap grid items-start gap-12 py-14 md:py-20 lg:grid-cols-12 lg:gap-14 lg:py-24">
+    <div className="lg:col-span-6">
+      <div className="flex items-center gap-4">
+        <img
+          src={profileImg}
+          alt={`Portrait of ${profile.name}`}
+          width="56"
+          height="56"
+          className="h-14 w-14 rounded-full border border-moss object-cover"
+        />
+        <div>
+          <p className="font-medium text-ivory">{profile.name}</p>
+          <p className="text-sm text-sage">{profile.role}</p>
+        </div>
       </div>
 
-      <motion.div
-        className="flex-1 relative mt-16 md:mt-0"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
-          {/* Decorative Borders */}
-          <div className="absolute -inset-4 border border-violet-deep/30 rounded-3xl rotate-6 -z-10" />
-          <div className="absolute -inset-4 border border-emerald-accent/20 rounded-3xl -rotate-3 -z-10" />
-          
-          <motion.div 
-            className="w-full h-full rounded-2xl overflow-hidden glass p-1 cursor-pointer"
-            whileHover={{ rotateY: 15, rotateX: -15, scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            onClick={() => setShowFilter(!showFilter)}
-          >
-            <img 
-              src={profileImg} 
-              alt="Profile" 
-              className={`w-full h-full object-cover rounded-xl transition-all duration-500 ${showFilter ? 'grayscale' : 'grayscale-0'}`}
-            />
-          </motion.div>
-          
-          {/* Floating Element */}
-          <motion.div 
-            className="absolute -bottom-6 -right-6 glass p-4 rounded-2xl animate-float"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            <div className="text-emerald-accent text-xs font-bold uppercase tracking-tighter">Available for</div>
-            <div className="text-white text-sm">Full-time Roles</div>
-          </motion.div>
-        </div>
-      </motion.div>
-    </section>
-  );
-};
+      <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-moss px-3 py-1 text-sm text-sage">
+        <span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold" />
+        Open to full-time roles
+      </p>
+
+      <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+        {accent(profile.headline)}
+      </h1>
+
+      <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-ivory/80">
+        {profile.bio.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+      </div>
+
+      <div className="mt-9 flex flex-wrap gap-3">
+        <Link
+          to={{ pathname: "/", hash: "#work" }}
+          className="rounded-md bg-mint px-6 py-3 font-medium text-forest transition-colors hover:bg-ivory"
+        >
+          See my projects
+        </Link>
+        <Link
+          to={{ pathname: "/", hash: "#contact" }}
+          className="rounded-md border border-moss px-6 py-3 font-medium text-ivory transition-colors hover:border-mint hover:text-mint"
+        >
+          Get in touch
+        </Link>
+      </div>
+    </div>
+
+    <div className="lg:col-span-6">
+      <div className="tone-light rounded-xl shadow-2xl shadow-black/30 ring-4 ring-gold/70">
+        <RequestTrace />
+      </div>
+    </div>
+  </section>
+);
 
 export default Hero;

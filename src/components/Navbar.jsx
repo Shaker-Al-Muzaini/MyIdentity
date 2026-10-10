@@ -1,99 +1,108 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { navLinks, profile } from "../data/site";
+
+const useActiveSection = (enabled) => {
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    if (!enabled) return;
+    const els = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [enabled]);
+
+  return enabled ? active : "";
+};
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const active = useActiveSection(pathname === "/");
 
-  // Detect scroll to add background opacity
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "/#home" },
-    { name: "Services", href: "/#services" },
-    { name: "Work", href: "/#work" },
-    { name: "Experience", href: "/#experience" },
-    { name: "Contact", href: "/#contact" }
-  ];
+  const linkClass = (id) =>
+    `relative py-1 text-sm transition-colors hover:text-ivory ${
+      active === id ? "text-ivory" : "text-sage"
+    }`;
 
   return (
-    <>
-      <motion.nav 
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300 ${scrolled ? 'bg-obsidian/80 backdrop-blur-lg border border-white/10 shadow-xl' : 'bg-transparent border border-transparent'}`}
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {/* Logo */}
-        <a href="/" className="text-white font-bold tracking-tighter text-2xl flex-shrink-0">
-          MyIdentity<span className="text-violet-deep">.</span>
-        </a>
-        
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 bg-white/5 border border-white/10 px-8 py-3 rounded-full backdrop-blur-md">
-          {navLinks.map((item, i) => (
-            <a 
-              key={i} 
-              href={item.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors cursor-pointer"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-        
-        {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4 flex-shrink-0">
-          <a href="/#contact" className="hidden sm:block px-6 py-2.5 bg-violet-deep text-white text-sm font-bold rounded-xl hover:bg-violet-glow transition-all shadow-[0_0_20px_rgba(124,58,237,0.3)]">
-            Let's Talk
-          </a>
-          
-          <button 
-            className="md:hidden text-gray-300 hover:text-white transition-colors p-2 bg-white/5 rounded-lg border border-white/10"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </motion.nav>
+    <header className="sticky top-0 z-50 border-b border-moss/60 bg-forest/90 backdrop-blur">
+      <div className="wrap flex h-16 items-center justify-between">
+        <Link to="/" className="font-semibold tracking-tight text-ivory">
+          {profile.name}
+        </Link>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 z-40 w-[95%] glass rounded-2xl p-6 flex flex-col gap-4 border border-white/10 md:hidden"
+        <nav aria-label="Main" className="hidden items-center gap-7 md:flex">
+          {navLinks.slice(0, -1).map((l) => (
+            <Link key={l.id} to={{ pathname: "/", hash: `#${l.id}` }} className={linkClass(l.id)} aria-current={active === l.id ? "location" : undefined}>
+              {l.label}
+              {active === l.id && <span className="absolute inset-x-0 -bottom-[13px] h-px bg-mint" />}
+            </Link>
+          ))}
+          <Link
+            to={{ pathname: "/", hash: "#contact" }}
+            className="rounded-md border border-mint px-4 py-2 text-sm font-medium text-mint transition-colors hover:bg-mint hover:text-forest"
           >
-            {navLinks.map((item, i) => (
-              <a 
-                key={i} 
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-gray-300 hover:text-violet-glow transition-colors cursor-pointer border-b border-white/5 pb-3"
-              >
-                {item.name}
-              </a>
-            ))}
-            <a 
-              href="/#contact" 
-              onClick={() => setIsOpen(false)}
-              className="w-full text-center mt-2 px-6 py-3 bg-violet-deep text-white font-bold rounded-xl hover:bg-violet-glow transition-all"
-            >
-              Let's Talk
-            </a>
-          </motion.div>
+            Contact
+          </Link>
+        </nav>
+
+        <button
+          type="button"
+          className="-mr-2 rounded-md p-2 text-ivory md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            id="mobile-menu"
+            aria-label="Mobile"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15 }}
+            className="absolute inset-x-0 top-full border-b border-moss/60 bg-forest shadow-2xl md:hidden"
+          >
+            <ul className="wrap py-2">
+              {navLinks.map((l) => (
+                <li key={l.id} className="border-b border-moss/40 last:border-0">
+                  <Link
+                    to={{ pathname: "/", hash: `#${l.id}` }}
+                    onClick={() => setOpen(false)}
+                    className="block py-3.5 text-lg text-ivory"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 };
 

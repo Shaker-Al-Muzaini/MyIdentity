@@ -1,57 +1,58 @@
-import { Routes, Route } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Services from "./components/Services";
+import Capabilities from "./components/Capabilities";
+import Experience from "./components/Experience";
+import Toolbox from "./components/Toolbox";
+import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import Testimonials from "./components/Testimonials";
-import Certifications from "./components/Certifications";
+import ScrollManager from "./components/ScrollManager";
 import ProjectDetails from "./components/ProjectDetails";
 
 const Home = () => (
   <>
-    <section id="home">
-      <Hero />
-    </section>
-
-    <section id="services">
-      <Services />
-    </section>
-    
-    <section id="experience">
-      <Experience />
-    </section>
-    
-    <section id="work">
-      <Projects />
-    </section>
-    
-    <section id="skills">
-      <Skills />
-    </section>
-
+    <Hero />
+    <Projects />
+    <Capabilities />
+    <Experience />
+    <Toolbox />
     <Certifications />
     <Contact />
   </>
 );
 
+const NotFound = () => (
+  <div className="wrap py-28">
+    <h1 className="text-3xl font-semibold">Page not found</h1>
+    <p className="mt-3 text-sage">The page you're looking for doesn't exist.</p>
+    <Link to="/" className="mt-6 inline-block text-mint underline underline-offset-4">
+      Back to the home page
+    </Link>
+  </div>
+);
+
 function App() {
   return (
-    <main className="bg-obsidian min-h-screen text-white selection:bg-violet-deep selection:text-white scroll-smooth">
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-mint focus:px-4 focus:py-2 focus:text-forest"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <ScrollToTop />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/:id" element={<ProjectDetails />} />
-      </Routes>
-      
+      <ScrollManager />
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/:slug" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 

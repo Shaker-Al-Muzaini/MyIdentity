@@ -1,49 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 @import "tailwindcss";
 
-
 @theme {
-  --color-obsidian: #0A0A0B;
-  --color-violet-deep: #7C3AED;
-  --color-violet-glow: #A78BFA;
-  --color-emerald-accent: #10B981;
-  
-  --font-cairo: "Cairo", sans-serif;
+  --color-forest: #07291f;
+  --color-pine: #0d3b2c;
+  --color-moss: #125a42;
+  --color-ivory: #f1f4ec;
+  --color-sage: #a9bbb0;
+  --color-mint: #6edca0;
+  --color-gold: #d4a017;
+  --color-deep: #051d16;
+
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-:root {
-  background-color: var(--color-obsidian);
-  color: #F9FAFB;
-  font-family: var(--font-cairo);
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+html {
+  background: var(--color-forest);
+  color: var(--color-ivory);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism utility */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+::selection {
+  background: var(--color-mint);
+  color: var(--color-forest);
 }
 
-.glass-violet {
-  background: rgba(124, 58, 237, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(124, 58, 237, 0.1);
+:focus-visible {
+  outline: 2px solid var(--color-mint);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-/* Custom animations if needed beyond framer-motion */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+section[id] {
+  scroll-margin-top: 4.5rem;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Section tones. Components keep using the same colour names; a tone class
+   remaps them so each section can sit on a different background. */
+.tone-light {
+  --color-forest: #f7f9f2;
+  --color-pine: #ffffff;
+  --color-moss: #cfd9cc;
+  --color-sage: #476055;
+  --color-ivory: #10261d;
+  --color-mint: #0b6b43;
+  background: #eef2e7;
+  color: var(--color-ivory);
+}
+
+.tone-gold {
+  --color-forest: #f7f3e3;
+  --color-pine: #f4dc92;
+  --color-moss: #b98c1c;
+  --color-sage: #3f4a22;
+  --color-ivory: #07291f;
+  --color-mint: #07291f;
+  background: #e8bd45;
+  color: var(--color-ivory);
+}
+
+.tone-mid {
+  background: var(--color-pine);
+}
+
+.tone-deep {
+  background: var(--color-deep);
+}
+
+.tone-forest {
+  --color-forest: #07291f;
+  --color-pine: #0d3b2c;
+  --color-moss: #1b6a4d;
+  --color-sage: #b4c6bb;
+  --color-ivory: #f1f4ec;
+  --color-mint: #6edca0;
+  background: #07291f;
+  color: var(--color-ivory);
 }
