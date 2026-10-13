@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollManager from "./components/ScrollManager";
 import ProjectDetails from "./components/ProjectDetails";
+import CertificateDetails from "./components/CertificateDetails";
 
 const Home = () => (
   <>
@@ -48,6 +49,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project/:slug" element={<ProjectDetails />} />
+          <Route path="/certifications/:slug" element={<CertificateDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
