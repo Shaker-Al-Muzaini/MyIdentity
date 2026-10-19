@@ -34,6 +34,11 @@ import b17 from "../assets/b17.png";
 import b18 from "../assets/b18.png";
 import b19 from "../assets/b19.png";
 
+import postflowCover from "../assets/linkedin-postflow-cover.png";
+import postflowWorkflow from "../assets/postflow-workflow.jpg";
+import postflowPostPreview from "../assets/postflow-post-preview.jpg";
+import postflowTelegramApproval from "../assets/postflow-telegram-approval.jpg";
+
 const GH = "https://github.com/Shaker-Al-Muzaini";
 
 // Order matters: the first three are the featured case studies.
@@ -127,6 +132,119 @@ export const projects = [
     github: `${GH}/SaaS_PDF`,
     live: "",
     gallery: [h11, h2, h3, h4],
+  },
+  {
+    slug: "linkedin-postflow",
+    title: "LinkedIn PostFlow",
+    category: "AI & Automation",
+    categoryAr: "الذكاء الاصطناعي والأتمتة",
+    tagline:
+      "A self-hosted n8n workflow that turns verified GitHub material into Arabic LinkedIn posts, renders a post image, and publishes only after your Telegram approval.",
+    taglineAr:
+      "سير عمل ذاتي الاستضافة عبر n8n يحوّل المصادر الموثوقة من GitHub إلى منشورات عربية على LinkedIn، وينشئ صورة المنشور، ولا ينشر إلا بعد موافقتك عبر Telegram.",
+    stack: [
+      "n8n",
+      "Docker",
+      "Gemini Flash",
+      "GitHub REST API",
+      "Gotenberg",
+      "Telegram Bot API",
+      "LinkedIn OAuth2",
+      "HTML & CSS",
+    ],
+    image: postflowCover,
+    frame: "aspect-[16/9]",
+    features: [
+      "A 30-node workflow with manual or scheduled runs and three rotating post formats.",
+      "Fetches technical material, release notes and security advisories from GitHub REST API sources.",
+      "Gemini Flash drafts the Arabic post from retrieved source material, with up to three automatic rewrite attempts.",
+      "Automated checks validate the hook, length, hashtags, sensitive strings and unsupported experience claims.",
+      "Builds an RTL HTML/CSS post card and renders it to PNG with Gotenberg and Chromium.",
+      "Sends the draft to Telegram for human review; polling checks for your reply every minute, and “تم” starts publishing.",
+      "Publishes the approved image post through LinkedIn OAuth2 and sends a Telegram confirmation.",
+      "Runs locally in Docker with a named n8n data volume and workflow exports for backup.",
+    ],
+    featuresAr: [
+      "سير عمل مكوّن من 30 عقدة، يعمل يدويًا أو وفق جدول، ويتناوب بين ثلاثة أنواع من المنشورات.",
+      "يجلب محتوى تقنيًا وملاحظات إصدارات وتنبيهات أمنية من مصادر GitHub عبر REST API.",
+      "يصوغ Gemini Flash المنشور بالعربية اعتمادًا على المصادر المسترجعة، مع ثلاث محاولات تلقائية كحد أقصى لإعادة الكتابة.",
+      "تفحص قواعد آلية الخطّاف والطول والوسوم والنصوص الحساسة وادعاءات التجربة غير المدعومة.",
+      "ينشئ بطاقة RTL باستخدام HTML وCSS ثم يحوّلها إلى PNG عبر Gotenberg وChromium.",
+      "يرسل المسودة إلى Telegram للمراجعة البشرية، ويتحقق من ردك كل دقيقة؛ وتبدأ كلمة «تم» عملية النشر.",
+      "ينشر صورة المنشور بعد الموافقة عبر LinkedIn OAuth2، ثم يرسل تأكيدًا إلى Telegram.",
+      "يعمل محليًا عبر Docker، مع volume لحفظ بيانات n8n وتصدير سير العمل كنسخة احتياطية.",
+    ],
+    challenges: [
+      {
+        task: "Gemini's built-in research exceeded the free-tier request limit",
+        solution:
+          "The workflow now fetches source material directly from GitHub's REST API, so the model drafts from retrieved material instead of relying on memory.",
+      },
+      {
+        task: "Telegram could not send a webhook to n8n on localhost",
+        solution:
+          "A polling branch checks Telegram getUpdates once a minute and picks up the approval reply.",
+      },
+      {
+        task: "Keeping approval state without a separate database",
+        solution:
+          "The Telegram message carries the post text and image identifier needed to resume the publishing flow after approval.",
+      },
+      {
+        task: "Image models rendered Arabic text incorrectly",
+        solution:
+          "The post card is laid out in HTML/CSS and rendered through Chromium with Gotenberg, keeping the Arabic text correctly shaped.",
+      },
+      {
+        task: "The first rendered PNG was black",
+        solution:
+          "A direct Gotenberg test isolated width and height parameters that emptied the image; removing them produced a valid PNG.",
+      },
+    ],
+    challengesAr: [
+      {
+        task: "تجاوز البحث المدمج في Gemini حد الطلبات المجاني",
+        solution:
+          "أصبح سير العمل يجلب المصادر مباشرة عبر GitHub REST API، ليكتب النموذج اعتمادًا على المحتوى المسترجع بدل الاعتماد على الذاكرة.",
+      },
+      {
+        task: "تعذّر وصول Telegram عبر webhook إلى n8n على localhost",
+        solution:
+          "يفحص مسار polling تحديثات Telegram عبر getUpdates مرة كل دقيقة لالتقاط رد الموافقة.",
+      },
+      {
+        task: "حفظ حالة الموافقة من دون قاعدة بيانات منفصلة",
+        solution:
+          "تحتوي رسالة Telegram على نص المنشور ومعرّف الصورة اللازمين لاستكمال مسار النشر بعد الموافقة.",
+      },
+      {
+        task: "ظهور النص العربي بشكل خاطئ في الصور المولّدة",
+        solution:
+          "تُنسّق بطاقة المنشور باستخدام HTML وCSS وتُرسم عبر Chromium من خلال Gotenberg، لتحافظ على تشكيل النص العربي واتجاهه.",
+      },
+      {
+        task: "ظهرت أول صورة PNG سوداء",
+        solution:
+          "عزل اختبار مباشر لـ Gotenberg معاملات العرض والارتفاع التي أفرغت الصورة؛ وبعد حذفها خرجت صورة PNG سليمة.",
+      },
+    ],
+    limitations: [
+      "The local machine and both Docker containers must remain running. The workflow has not been load-tested.",
+      "Unauthenticated GitHub API requests are limited to 60 per hour; Gemini free-tier quotas can change.",
+      "Telegram resizes images to a longest side of 1280 pixels, so the published post image is approximately 1024 × 1280.",
+      "The LinkedIn node does not publish the optional first comment containing code; that comment is copied manually.",
+      "Duplicate-topic memory is used only by scheduled runs after Publish, not by manual runs.",
+    ],
+    limitationsAr: [
+      "يجب أن يبقى الجهاز المحلي وحاويتا Docker قيد التشغيل، ولم يُختبر سير العمل تحت حمل مرتفع.",
+      "الطلبات غير الموثّقة إلى GitHub محدودة بـ60 طلبًا في الساعة، وقد تتغير حصص Gemini المجانية.",
+      "يقلّص Telegram الصورة بحيث لا يتجاوز أطول ضلع 1280 بكسل؛ لذلك يكون مقاس صورة المنشور المنشورة قرابة 1024 × 1280.",
+      "لا تنشر عقدة LinkedIn التعليق الأول الاختياري الذي يحتوي على الكود؛ ويُنسخ هذا التعليق يدويًا.",
+      "تعمل ذاكرة منع تكرار المواضيع في التشغيل المجدول بعد النشر فقط، ولا تعمل عند التشغيل اليدوي.",
+    ],
+    github: "",
+    live: "",
+    gallery: [postflowWorkflow, postflowPostPreview, postflowTelegramApproval],
   },
   {
     slug: "the-daily",
