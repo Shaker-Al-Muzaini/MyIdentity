@@ -36,7 +36,6 @@ import b19 from "../assets/b19.png";
 
 import postflowCover from "../assets/linkedin-postflow-cover.png";
 import postflowWorkflow from "../assets/postflow-workflow.jpg";
-import postflowPostPreview from "../assets/postflow-post-preview.jpg";
 import postflowTelegramApproval from "../assets/postflow-telegram-approval.jpg";
 
 const GH = "https://github.com/Shaker-Al-Muzaini";
@@ -67,71 +66,6 @@ export const projects = [
     github: `${GH}/HR-Tech`,
     live: "",
     gallery: [b17, b18],
-  },
-  {
-    slug: "ai-content-automation",
-    title: "AI Content Automation",
-    category: "AI & Automation",
-    tagline:
-      "An n8n workflow that takes content from idea and research to writing, images, human review, publishing and archiving.",
-    stack: ["n8n", "GPT-5", "Tavily", "WordPress", "Telegram", "Google Sheets", "Google Drive"],
-    image: b19,
-    frame: "aspect-[19/10]",
-    features: [
-      "Automated research using Tavily with up-to-date web information",
-      "AI-powered article generation based on research results",
-      "AI-generated featured images based on article content",
-      "Human-in-the-loop approval through Telegram",
-      "Multi-platform publishing to WordPress, LinkedIn, X and Facebook",
-      "Automatic archiving with Google Drive and Google Sheets",
-      "Switchable AI model: GPT, Claude or Gemini",
-    ],
-    challenges: [
-      {
-        task: "Keeping AI-generated content based on current information",
-        solution:
-          "Tavily retrieves up-to-date web information before the AI agent writes the article.",
-      },
-      {
-        task: "Maintaining human control over AI-generated content",
-        solution:
-          "A Telegram approval step means nothing is published until it has been reviewed and approved.",
-      },
-      {
-        task: "Avoiding dependency on a single AI provider",
-        solution:
-          "The AI layer lets GPT, Claude or Gemini be switched without rebuilding the automation.",
-      },
-      {
-        task: "Publishing the same content across multiple platforms",
-        solution:
-          "WordPress, LinkedIn, X and Facebook are connected so approved content is distributed from a single workflow.",
-      },
-    ],
-    github: `${GH}/AI-Content-Automation`,
-    live: "",
-    gallery: [b19],
-  },
-  {
-    slug: "pdf-summarizer-saas",
-    title: "PDF Summarizer SaaS",
-    category: "SaaS & Platforms",
-    tagline:
-      "An AI-powered PDF summarization platform with Stripe subscriptions, built on a clean DDD architecture.",
-    stack: ["Laravel 13", "React", "DDD", "Stripe", "Fortify", "Groq AI"],
-    image: h1,
-    features: [
-      "Multi-option summaries: default, key points, highlights or detailed",
-      "Stripe subscriptions (monthly and annual) with webhooks that update the user's plan on payment",
-      "User dashboard to track usage, upload files and export summaries",
-      "Admin dashboard to manage users and plans and monitor revenue and statistics",
-      "Fortify security with two-factor authentication and passkeys",
-      "Usage and export history, with one-click export to TXT or PDF",
-    ],
-    challenges: [],
-    github: `${GH}/SaaS_PDF`,
-    live: "",
-    gallery: [h11, h2, h3, h4],
   },
   {
     slug: "linkedin-postflow",
@@ -244,8 +178,106 @@ export const projects = [
     ],
     github: "",
     live: "",
-    gallery: [postflowWorkflow, postflowPostPreview, postflowTelegramApproval],
+    gallery: [postflowCover, postflowWorkflow, postflowTelegramApproval],
   },
+  {
+    slug: "b2b-link",
+    title: "B2B Link",
+    category: "SaaS & Platforms",
+    tagline:
+      "A B2B contracting platform connecting companies with technical service providers, from competitive bids to digitally signed contracts.",
+    stack: ["Laravel 13", "Vue.js", "Inertia.js", "SQLite", "Tailwind CSS", "Fortify", "Spatie Permission"],
+    image: b13,
+    features: [
+      "Multi-role system with buyer and supplier dashboards",
+      "RFQs and proposals",
+      "Digital NDAs and contracts",
+      "Verification process",
+      "Authentication with passkeys",
+      "Vite and Inertia.js single-page experience",
+    ],
+    challenges: [
+      {
+        task: "A fast single-page app without giving up Laravel",
+        solution:
+          "Vite and Inertia.js give a quick SPA experience while keeping Laravel's security and routing.",
+      },
+      {
+        task: "Two roles with different needs",
+        solution: "Each role has its own dashboard: one for buyers and one for suppliers.",
+      },
+    ],
+    github: `${GH}/B2B_App`,
+    live: "",
+    gallery: [b11, b12, b13, b14],
+  },
+ 
+  {
+    slug: "pdf-summarizer-saas",
+    title: "PDF Summarizer SaaS",
+    category: "SaaS & Platforms",
+    tagline:
+      "An AI-powered PDF summarization platform with Stripe subscriptions, built on a clean DDD architecture.",
+    stack: ["Laravel 13", "React", "DDD", "Stripe", "Fortify", "Groq AI"],
+    image: h1,
+    features: [
+      "Multi-option summaries: default, key points, highlights or detailed",
+      "Stripe subscriptions (monthly and annual) with webhooks that update the user's plan on payment",
+      "User dashboard to track usage, upload files and export summaries",
+      "Admin dashboard to manage users and plans and monitor revenue and statistics",
+      "Fortify security with two-factor authentication and passkeys",
+      "Usage and export history, with one-click export to TXT or PDF",
+    ],
+    challenges: [],
+    github: `${GH}/SaaS_PDF`,
+    live: "",
+    gallery: [h11, h2, h3, h4],
+  },
+   {
+    slug: "ai-content-automation",
+    title: "AI Content Automation",
+    category: "AI & Automation",
+    tagline:
+      "An n8n workflow that takes content from idea and research to writing, images, human review, publishing and archiving.",
+    stack: ["n8n", "GPT-5", "Tavily", "WordPress", "Telegram", "Google Sheets", "Google Drive"],
+    image: b19,
+    frame: "aspect-[19/10]",
+    features: [
+      "Automated research using Tavily with up-to-date web information",
+      "AI-powered article generation based on research results",
+      "AI-generated featured images based on article content",
+      "Human-in-the-loop approval through Telegram",
+      "Multi-platform publishing to WordPress, LinkedIn, X and Facebook",
+      "Automatic archiving with Google Drive and Google Sheets",
+      "Switchable AI model: GPT, Claude or Gemini",
+    ],
+    challenges: [
+      {
+        task: "Keeping AI-generated content based on current information",
+        solution:
+          "Tavily retrieves up-to-date web information before the AI agent writes the article.",
+      },
+      {
+        task: "Maintaining human control over AI-generated content",
+        solution:
+          "A Telegram approval step means nothing is published until it has been reviewed and approved.",
+      },
+      {
+        task: "Avoiding dependency on a single AI provider",
+        solution:
+          "The AI layer lets GPT, Claude or Gemini be switched without rebuilding the automation.",
+      },
+      {
+        task: "Publishing the same content across multiple platforms",
+        solution:
+          "WordPress, LinkedIn, X and Facebook are connected so approved content is distributed from a single workflow.",
+      },
+    ],
+    github: `${GH}/AI-Content-Automation`,
+    live: "",
+    gallery: [b19],
+  },
+  
   {
     slug: "the-daily",
     title: "The Daily",

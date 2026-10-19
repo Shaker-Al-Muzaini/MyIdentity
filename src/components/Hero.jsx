@@ -31,11 +31,6 @@ const Hero = () => (
         </div>
       </div>
 
-      <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-moss px-3 py-1 text-sm text-sage">
-        <span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold" />
-        Open to full-time roles
-      </p>
-
       <h1 className="mt-6 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
         {accent(profile.headline)}
       </h1>
