@@ -1,6 +1,5 @@
-import digitalDashboard from "../assets/digital-momentum-dashboard.webp";
-import digitalHome from "../assets/digital-momentum-homepage.webp";
-import digitalOrder from "../assets/digital-momentum-new_order.webp";
+import digitalDashboard from "../assets/digital-momentum-dashboard-mockup.webp";
+import digitalHome from "../assets/digital-momentum-home-mockup.webp";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import o2 from "../assets/o2.png";
@@ -86,7 +85,7 @@ export const projects = [
     "CSS"
   ],
   "image": digitalDashboard,
-  "frame": "aspect-[16/10]",
+  "frame": "aspect-[10/7]",
   "features": [
     "Public website with a service catalog, pricing calculator, getting-started guide, API examples, FAQ and contact form.",
     "Arabic and English interfaces with RTL/LTR layouts, responsive pages, and light and dark themes.",
@@ -151,8 +150,7 @@ export const projects = [
   "live": "https://digital-momentum-sigma.vercel.app/",
   "gallery": [
     digitalDashboard,
-    digitalHome,
-    digitalOrder
+    digitalHome
   ]
 },
   {
