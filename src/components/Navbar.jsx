@@ -42,7 +42,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-moss/60 bg-forest/90 backdrop-blur">
+    <header className={`sticky top-0 z-50 border-b border-moss/60 bg-forest/90 backdrop-blur ${pathname === "/" ? "portfolio-editorial-nav" : ""}`}>
       <div className="wrap flex h-16 items-center justify-between">
         <Link to="/" className="font-semibold tracking-tight text-ivory">
           {profile.name}

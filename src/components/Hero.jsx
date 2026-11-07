@@ -1,78 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
-import profileImg from '../assets/shaker_avatar.png';
-import { profile } from '../data/site';
+import projectImage from '../assets/digital-momentum-dashboard.webp';
 import './SystemStory.css';
 
-const chapters = [
-  { label: '01 / THE IDEA', title: <>Complex ideas.<br /><em>Clear systems.</em></>, description: 'I’m Shaker. I turn business problems into software — from the first API to the intelligence and automation around it.', note: 'One idea. Every layer considered.' },
-  { label: '02 / THE ARCHITECTURE', title: <>Every layer.<br /><em>Working together.</em></>, description: 'Laravel at the core. FastAPI for intelligence. PostgreSQL for data. n8n connecting the work. Designed as one coherent system.', note: 'Explore the layers. Scroll to assemble.' },
-  { label: '03 / THE DELIVERY', title: <>Built to work.<br /><em>Ready to grow.</em></>, description: 'From architecture to deployment: practical software, automated workflows, and a foundation your next idea can build on.', note: 'From an idea to a working product.' },
+const EngineeringScene = lazy(() => import('./engineering/EngineeringScene'));
+const story = [
+  { id: 'idea', number: '01', eyebrow: 'Software, thoughtfully engineered.', title: <>BUILT<br />WITH<br /><i>PURPOSE.</i></>, body: 'I’m Shaker Al-Muzayni. I build the backend, AI services and automation that turn an idea into a working product.', link: 'EXPLORE MY WORK', href: '/#work', caption: 'A good product starts with a clear idea.', tag: 'THE IDEA' },
+  { id: 'architecture', number: '02', eyebrow: 'Look beyond the interface.', title: <>BEAUTY<br />ON THE<br /><i>INSIDE.</i></>, body: 'APIs, data, intelligence and workflows. Different parts, carefully connected. This is where I do my best work.', link: 'WHAT I BUILD', href: '/#services', caption: 'Laravel · PostgreSQL · FastAPI · n8n', tag: 'THE ARCHITECTURE' },
+  { id: 'product', number: '03', eyebrow: 'Bring every part together.', title: <>FROM<br />CODE TO<br /><i>PRODUCT.</i></>, body: 'Digital Momentum brings services, orders, prepaid credit and support into one customer and admin experience.', link: 'EXPLORE THE PROJECT', href: '/project/digital-momentum', caption: 'Digital Momentum / interactive platform demo', tag: 'THE PRODUCT' },
+  { id: 'craft', number: '04', eyebrow: 'Built with care. Down to the details.', title: <>MADE<br />TO MAKE<br /><i>A DIFFERENCE.</i></>, body: 'Backend engineering. AI integration. Workflow automation. Let’s build the software your next idea deserves.', link: 'LET’S TALK', href: '/#contact', caption: 'Your next idea could be here.', tag: 'YOUR NEXT IDEA' },
 ];
-const layers = [
-  { name: 'n8n', detail: 'AUTOMATION', symbol: '⌘', color: 'gold' },
-  { name: 'FastAPI', detail: 'INTELLIGENCE', symbol: '✳', color: 'mint' },
-  { name: 'Laravel', detail: 'APPLICATION', symbol: '{ }', color: 'green' },
-  { name: 'PostgreSQL', detail: 'DATA', symbol: '≡', color: 'ivory' },
-];
-
 export default function Hero() {
   const root = useRef(null);
-  const [chapter, setChapter] = useState(0);
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let frame;
-    const update = () => {
-      frame = null;
-      const el = root.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const p = media.matches ? 0 : Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height - window.innerHeight)));
-      const spread = Math.sin(p * Math.PI);
-      el.style.setProperty('--spread', spread.toFixed(4));
-      el.style.setProperty('--turn', `${-32 + p * 34}deg`);
-      setChapter(media.matches ? 0 : p < .27 ? 0 : p < .73 ? 1 : 2);
-    };
-    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
-    update();
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    media.addEventListener('change', schedule);
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      media.removeEventListener('change', schedule);
-    };
-  }, []);
-  const content = chapters[chapter];
-  return (
-    <section ref={root} id="home" className={`system-story story-phase-${chapter}`} aria-label="From an idea to a working software system">
-      <div className="story-sticky">
-        <div className="story-topline"><span>SHAKER AL-MUZAYNI / SOFTWARE ENGINEER</span><span className="story-top-right">BACKEND · AI · AUTOMATION</span></div>
-        <div className="story-layout">
-          <div className="story-copy">
-            <div className="story-person"><img src={profileImg} alt={profile.name} width="36" height="36" /><span>Engineering with purpose.</span></div>
-            <p className="story-eyebrow">{content.label}</p>
-            <h1>{content.title}</h1>
-            <p className="story-description">{content.description}</p>
-            <div className="story-actions"><Link to="/#work" className="story-primary">Explore my work <ArrowUpRight size={18} /></Link><Link to="/#contact" className="story-secondary">Let’s build something <ArrowUpRight size={17} /></Link></div>
-          </div>
-          <div className="story-art" role="img" aria-label="An exploded three-dimensional software core with n8n automation, FastAPI intelligence, Laravel application, and PostgreSQL data layers">
-            <div className="story-orbit" /><div className="story-shadow" />
-            <div className="system-model" aria-hidden="true">
-              {layers.map((layer, i) => <div key={layer.name} className={`system-layer layer-${layer.color}`} style={{ '--i': i, '--offset': 1.5 - i }}>
-                <div className="layer-face layer-top"><span className="layer-symbol">{layer.symbol}</span><span className="layer-top-name">{layer.name}</span><span className="layer-corner">0{i + 1}</span></div>
-                <div className="layer-face layer-front"><span className="layer-led" /><span>{layer.detail}</span><span className="layer-vents">|||</span></div>
-                <div className="layer-face layer-back" /><div className="layer-face layer-left" /><div className="layer-face layer-right" /><div className="layer-face layer-bottom" />
-              </div>)}
-            </div>
-            <div className="story-art-caption"><span className="story-dot" /> {content.note}</div>
-          </div>
-        </div>
-        <div className="story-footer"><span className="story-scroll"><ArrowDown size={16} /> SCROLL TO EXPLORE</span><div className="story-progress" aria-label={`Chapter ${chapter + 1} of 3`}>{chapters.map((_, i) => <span key={i} className={chapter === i ? 'active' : ''} />)}</div><span>IDEA → SYSTEM → IMPACT</span></div>
+  return <section id="home" ref={root} className="engineering-story" aria-label="The journey from an idea to a software product">
+    <div className="engineering-stage" aria-hidden="true"><Suspense fallback={<div className="scene-loading">Preparing the workspace<span>· · ·</span></div>}><EngineeringScene storyRef={root} /></Suspense></div>
+    {story.map((part, i) => <section key={part.id} className={`engineering-panel panel-${part.id}`} aria-labelledby={`story-title-${part.id}`}>
+      <div className="engineering-panel-top"><span>SHAKER AL-MUZAYNI</span><span>SOFTWARE ENGINEER</span></div>
+      <div className="engineering-copy">
+        <p className="engineering-eyebrow">{part.eyebrow}</p>
+        {i === 0 ? <h1 id={`story-title-${part.id}`}>{part.title}</h1> : <h2 id={`story-title-${part.id}`}>{part.title}</h2>}
+        <p className="engineering-description">{part.body}</p>
+        <Link className="engineering-cta" to={part.href}>{part.link}<ArrowUpRight size={15} /></Link>
       </div>
-    </section>
-  );
+      <figure className="engineering-static"><img src={projectImage} alt="Digital Momentum dashboard showing services, balance and orders" /></figure>
+      <div className="engineering-caption"><span className="caption-line" />{part.caption}</div>
+      <div className="engineering-panel-bottom"><span>{part.number} / {part.tag}</span><span className="engineering-dots">{story.map((s, j) => <b className={i === j ? 'current' : ''} key={s.id} />)}</span><span className="engineering-scroll">SCROLL TO DISCOVER <ArrowDown size={13} /></span></div>
+    </section>)}
+  </section>;
 }
