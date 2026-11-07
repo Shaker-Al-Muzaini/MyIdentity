@@ -80,7 +80,7 @@ export const projects = [
     "Next.js",
     "React",
     "JavaScript",
-    "FastAPI (starter)",
+    "FastAPI",
     "Three.js",
     "CSS"
   ],
@@ -136,7 +136,7 @@ export const projects = [
   ],
   "limitations": [
     "The live site is an interactive demo: payments, order fulfillment, content generation and monitoring do not contact external providers.",
-    "FastAPI is currently a starter server; the proposed application endpoints are not implemented. No n8n integration is included in this repository.",
+    "FastAPI is currently an initial server; the proposed application endpoints are not implemented. No n8n integration is included in this repository.",
     "Prepaid packages represent wallet top-ups, not recurring subscriptions. Demo transfer approval requires switching to the admin account in the same tab.",
     "Browser session restoration may recover session data. Use a fresh tab session to start again."
   ],
