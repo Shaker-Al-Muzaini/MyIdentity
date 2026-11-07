@@ -1,3 +1,6 @@
+import digitalDashboard from "../assets/digital-momentum-dashboard.webp";
+import digitalHome from "../assets/digital-momentum-homepage.webp";
+import digitalOrder from "../assets/digital-momentum-new_order.webp";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import o2 from "../assets/o2.png";
@@ -40,7 +43,7 @@ import postflowTelegramApproval from "../assets/postflow-telegram-approval.jpg";
 
 const GH = "https://github.com/Shaker-Al-Muzaini";
 
-// Order matters: the first three are the featured case studies.
+// Order matters: the first four are the featured case studies.
 export const projects = [
   {
     slug: "hr-tech",
@@ -67,6 +70,91 @@ export const projects = [
     live: "",
     gallery: [b17, b18],
   },
+{
+  "slug": "digital-momentum",
+  "title": "Digital Momentum",
+  "category": "SaaS & Platforms",
+  "categoryAr": "المنصات والخدمات الرقمية",
+  "tagline": "A bilingual digital-services platform demo bringing service discovery, orders, prepaid credit and customer support into one customer and admin experience.",
+  "taglineAr": "منصة تجريبية ثنائية اللغة للخدمات الرقمية، تجمع استكشاف الخدمات والطلبات والرصيد المدفوع مسبقًا والدعم ضمن تجربة واحدة للعميل والإدارة.",
+  "stack": [
+    "Next.js",
+    "React",
+    "JavaScript",
+    "FastAPI (starter)",
+    "Three.js",
+    "CSS"
+  ],
+  "image": digitalDashboard,
+  "frame": "aspect-[16/10]",
+  "features": [
+    "Public website with a service catalog, pricing calculator, getting-started guide, API examples, FAQ and contact form.",
+    "Arabic and English interfaces with RTL/LTR layouts, responsive pages, and light and dark themes.",
+    "Customer dashboard showing balance, spending, recent orders and weekly activity.",
+    "Single and bulk orders with service limits, URL and quantity validation, cost calculation, and success messages with order numbers.",
+    "Simulated order progression from pending to processing to completed, with synchronized order history and dashboard statistics.",
+    "Prepaid credit top-up options of $10, $25, $50 and $100, plus custom amounts; demo purchases deduct from the wallet balance.",
+    "Simulated card payments and local-transfer requests with receipt uploads, admin approval or rejection, and a transaction ledger.",
+    "Support tickets, account preferences, password-change simulation, referral overview and a copyable demo API key.",
+    "Admin screens for users, payment reviews and activity totals, plus sample provider, proxy and server-health views.",
+    "A local content-preview generator that returns an Arabic or English template based on the entered topic.",
+    "Session-scoped preview data survives page refreshes and resets when the tab session ends; duplicate submissions are guarded against.",
+    "Next.js App Router layouts and a shared API client, with a proposed API contract and an initial FastAPI server for future integration."
+  ],
+  "featuresAr": [
+    "موقع تعريفي يضم دليل الخدمات وحاسبة الأسعار وطريقة الاستخدام وأمثلة API والأسئلة الشائعة ونموذج التواصل.",
+    "واجهات عربية وإنجليزية تدعم RTL وLTR، وصفحات متجاوبة، ووضعًا نهاريًا وآخر ليليًا.",
+    "لوحة عميل تعرض الرصيد والإنفاق وآخر الطلبات والنشاط الأسبوعي.",
+    "طلبات فردية وجماعية مع التحقق من حدود الخدمة والرابط والكمية وحساب التكلفة ورسائل نجاح تحمل أرقام الطلبات.",
+    "تدرّج تجريبي للطلب من الانتظار إلى التنفيذ ثم الاكتمال، مع تحديث سجل الطلبات وإحصائيات اللوحة.",
+    "باقات شحن رصيد مسبق بقيم 10 و25 و50 و100 دولار، مع إمكانية تحديد مبلغ آخر؛ وتُخصم المشتريات التجريبية من رصيد المحفظة.",
+    "محاكاة الدفع بالبطاقة وطلبات التحويل المحلي مع رفع إيصال وموافقة الإدارة أو رفضها وسجل للمعاملات.",
+    "تذاكر دعم وتفضيلات الحساب ومحاكاة تغيير كلمة المرور وملخص الإحالات ومفتاح API تجريبي قابل للنسخ.",
+    "شاشات إدارية للمستخدمين ومراجعة الدفعات وإجماليات النشاط، مع بيانات نموذجية للمزوّدين والبروكسيات وحالة الخادم.",
+    "مولّد معاينة محتوى محلي يعرض قالبًا عربيًا أو إنجليزيًا وفق الموضوع المدخل.",
+    "بيانات معاينة خاصة بالجلسة تبقى عند تحديث الصفحة وتنتهي بانتهاء جلسة التبويب، مع منع تكرار إرسال العمليات.",
+    "تخطيطات Next.js App Router وعميل API مشترك، مع عقد API مقترح وخادم FastAPI أولي للربط لاحقًا."
+  ],
+  "challenges": [
+    {
+      "task": "Keeping wallet and order data consistent",
+      "solution": "The demo serializes operations, validates the full batch before deducting credit, and uses idempotency keys to prevent repeated charges."
+    },
+    {
+      "task": "Making the preview useful without real payments or providers",
+      "solution": "Session storage isolates demo activity; simulated order progress and linked customer/admin payment review demonstrate the complete flow."
+    }
+  ],
+  "challengesAr": [
+    {
+      "task": "الحفاظ على اتساق الرصيد والطلبات",
+      "solution": "تنفّذ المعاينة العمليات بالتتابع، وتتحقق من جميع الطلبات الجماعية قبل الخصم، وتستخدم مفاتيح منع التكرار لتفادي الخصم المكرر."
+    },
+    {
+      "task": "تقديم تجربة مفيدة دون مدفوعات أو مزوّدين حقيقيين",
+      "solution": "تعزل بيانات الجلسة النشاط التجريبي، وتوضّح محاكاة تقدّم الطلبات ومراجعة المدفوعات بين العميل والإدارة مسار الاستخدام كاملًا."
+    }
+  ],
+  "limitations": [
+    "The live site is an interactive demo: payments, order fulfillment, content generation and monitoring do not contact external providers.",
+    "FastAPI is currently a starter server; the proposed application endpoints are not implemented. No n8n integration is included in this repository.",
+    "Prepaid packages represent wallet top-ups, not recurring subscriptions. Demo transfer approval requires switching to the admin account in the same tab.",
+    "Browser session restoration may recover session data. Use a fresh tab session to start again."
+  ],
+  "limitationsAr": [
+    "الموقع المنشور معاينة تفاعلية: المدفوعات وتنفيذ الطلبات وتوليد المحتوى والمراقبة لا تتصل بمزوّدين خارجيين.",
+    "FastAPI حاليًا خادم أولي، ولم تُنفّذ نقاط API المقترحة للتطبيق بعد. لا يتضمن هذا المستودع تكامل n8n.",
+    "باقات الدفع المسبق هي شحن للمحفظة وليست اشتراكات متجددة. اعتماد التحويل التجريبي يحتاج التبديل إلى حساب المدير في التبويب نفسه.",
+    "قد تستعيد ميزة استعادة جلسات المتصفح بيانات الجلسة. ابدأ بجلسة تبويب جديدة لإعادة التجربة."
+  ],
+  "github": "https://github.com/Shaker-Al-Muzaini/Digital-Momentum",
+  "live": "https://digital-momentum-sigma.vercel.app/",
+  "gallery": [
+    digitalDashboard,
+    digitalHome,
+    digitalOrder
+  ]
+},
   {
     slug: "linkedin-postflow",
     title: "LinkedIn PostFlow",
@@ -456,5 +544,5 @@ export const projects = [
   },
 ];
 
-export const featuredProjects = projects.slice(0, 3);
+export const featuredProjects = projects.slice(0, 4);
 export const getProject = (slug) => projects.find((p) => p.slug === slug);

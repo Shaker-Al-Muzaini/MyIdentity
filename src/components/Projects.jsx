@@ -116,7 +116,7 @@ const Projects = () => {
       <div className="wrap">
         <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Selected work</h2>
         <p className="mt-3 max-w-xl text-sage">
-          Three projects that show how I combine Laravel, FastAPI and n8n. Everything else I've built follows, three at a time.
+          Four projects showcasing backend engineering, automation and interactive product experiences. More projects follow, three at a time.
         </p>
 
         <div className="mt-14 space-y-16 md:space-y-24">
